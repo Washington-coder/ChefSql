@@ -32,7 +32,11 @@ function LevelSelectScreen({ onBack, onSelectDay }: LevelSelectScreenProps) {
   return (
     <main className="level-select-screen">
       <header className="level-select-screen__header">
-        <button type="button" className="pixel-button" onClick={onBack}>
+        <button
+          type="button"
+          className="pixel-button level-select-screen__back-button"
+          onClick={onBack}
+        >
           ← Voltar
         </button>
         <h1 className="level-select-screen__title">Mapa da Carreira</h1>

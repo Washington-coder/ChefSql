@@ -12,10 +12,26 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.2rem;
+  padding: 0.7rem 1rem;
   border-bottom: 4px solid var(--color-border-dark);
   background: linear-gradient(180deg, var(--color-panel) 0%, #1d1511 100%);
   box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.level-select-screen__back-button {
+  justify-self: start;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.6rem;
+  border-width: 2px;
+  box-shadow: 0 3px 0 0 var(--color-border-dark);
+}
+
+.level-select-screen__back-button:hover {
+  box-shadow: 0 5px 0 0 var(--color-border-dark);
+}
+
+.level-select-screen__back-button:active {
+  box-shadow: 0 1px 0 0 var(--color-border-dark);
 }
 
 .level-select-screen__title {

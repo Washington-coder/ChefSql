@@ -64,7 +64,7 @@ function GameScreen({ dayId, onExit }: GameScreenProps) {
   return (
     <main className="game-screen">
       <header className="game-screen__header">
-        <button type="button" className="pixel-button" onClick={onExit}>
+        <button type="button" className="pixel-button game-screen__exit-button" onClick={onExit}>
           ← Sair
         </button>
         <h1 className="game-screen__title">Dia {dayId} · Dia de Trabalho</h1>
