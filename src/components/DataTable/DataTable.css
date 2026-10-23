@@ -2,6 +2,33 @@
   overflow-x: auto;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-fire-dark) var(--color-panel);
+  border-radius: 4px;
+}
+
+.data-table__scroll::-webkit-scrollbar {
+  height: 0.6rem;
+  background: var(--color-panel);
+  border-top: 2px solid var(--color-border-dark);
+}
+
+.data-table__scroll::-webkit-scrollbar-track {
+  background: var(--color-panel);
+}
+
+.data-table__scroll::-webkit-scrollbar-thumb {
+  background: var(--color-fire-dark);
+  border-radius: 0;
+  border: 2px solid var(--color-border-dark);
+}
+
+.data-table__scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fire);
+}
+
+.data-table__scroll::-webkit-scrollbar-corner {
+  background: var(--color-panel);
 }
 
 .data-table__grid {
