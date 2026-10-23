@@ -1,21 +1,27 @@
-import { useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react'
+import { useRef, type ChangeEvent, type KeyboardEvent } from 'react'
 import { tokenizeSql } from './sqlSyntax'
 import './SqlEditor.css'
 
 interface SqlEditorProps {
   onSubmit: (sql: string) => void
+  value: string
+  onChange: (value: string) => void
   placeholder?: string
 }
 
-function SqlEditor({ onSubmit, placeholder = 'Escreva sua consulta SQL...' }: SqlEditorProps) {
-  const [value, setValue] = useState('')
+function SqlEditor({
+  onSubmit,
+  value,
+  onChange,
+  placeholder = 'Escreva sua consulta SQL...',
+}: SqlEditorProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const highlightRef = useRef<HTMLPreElement>(null)
 
   const tokens = tokenizeSql(value)
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setValue(event.target.value)
+    onChange(event.target.value)
   }
 
   function handleScroll() {
@@ -36,7 +42,7 @@ function SqlEditor({ onSubmit, placeholder = 'Escreva sua consulta SQL...' }: Sq
   }
 
   function handleClear() {
-    setValue('')
+    onChange('')
     inputRef.current?.focus()
   }
 

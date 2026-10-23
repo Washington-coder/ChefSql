@@ -36,20 +36,20 @@
 
 ## 3. Banco de dados do jogo (spec §4, §5.1)
 
-- [ ] Criar `src/game/levels/schema.sql` com as 4 tabelas: `geladeira`, `clientes`, `pedidos`, `receitas`
-- [ ] Criar wrapper `sqlDatabase.ts` do sql.js (criar banco, executar query, reset, `db.close()`)
-- [ ] Carregar o `.wasm` de forma assíncrona com estado de loading na UI (gotcha sql.js)
-- [ ] Copiar/importar o `.wasm` para o build do Vite (`?url` ou `public/`)
-- [ ] Usar data atual fixa por fase (texto `YYYY-MM-DD`) para validade — determinismo nos testes
-- [ ] Proteger o jogo de queries muito pesadas (limite de linhas exibidas)
-- [ ] Criar seeds dos dias 1 a 4 em `src/game/levels/dayN/seed.sql`
+- [x] Criar `src/game/levels/schema.sql` com as 4 tabelas: `geladeira`, `clientes`, `pedidos`, `receitas`
+- [x] Criar wrapper `sqlDatabase.ts` do sql.js (criar banco, executar query, reset, `db.close()`)
+- [x] Carregar o `.wasm` de forma assíncrona com estado de loading na UI (gotcha sql.js)
+- [x] Copiar/importar o `.wasm` para o build do Vite (`?url` ou `public/`)
+- [x] Usar data atual fixa por fase (texto `YYYY-MM-DD`) para validade — determinismo nos testes
+- [x] Proteger o jogo de queries muito pesadas (limite de linhas exibidas + bloqueio de `WITH RECURSIVE`)
+- [ ] Criar seeds dos dias 1 a 4 em `src/game/levels/dayN/seed.sql` (Dia 1 feito; 2–4 pendentes)
 
 ## 4. Motor de avaliação (spec §5.1, §15)
 
 - [ ] Criar `evaluator.ts` — comparar query do jogador com consulta de referência (colunas/aliases normalizados)
 - [ ] Suportar validação por estado do banco para missões de mutação (`INSERT`/`UPDATE`/`DELETE`)
 - [ ] Exigir `ORDER BY` somente quando a missão pedir ordem
-- [ ] Converter erros de SQL em mensagens amigáveis em português (nunca derrubar a tela)
+- [x] Converter erros de SQL em mensagens amigáveis em português (nunca derrubar a tela)
 - [ ] Criar `commandDetector.ts` — identificar tipo de comando (`SELECT`, `INSERT`, `UPDATE`, `DELETE`, `JOIN`) para animações
 - [ ] Testes do avaliador: acerto, erro de sintaxe, resultado errado, ordem relevante vs. irrelevante, mutações
 - [ ] Testes do `commandDetector` para cada tipo de comando
@@ -64,8 +64,8 @@
 
 - [ ] Montar layout vertical: cena 2D no topo, contexto da missão, área de dados, editor SQL
 - [ ] Componente `MissionPanel` — texto da missão atual
-- [ ] Componente `DataTable` — exibir tabelas do banco e resultado da última query (linha destacada em vermelho quando cliente irritado)
-- [ ] Componente `SqlEditor` — editor com destaque de sintaxe, botão "Executar" e histórico de consultas
+- [x] Componente `DataTable` — exibir tabelas do banco e resultado da última query (linha destacada em vermelho quando cliente irritado)
+- [x] Componente `SqlEditor` — editor com destaque de sintaxe, botão "Executar" e histórico de consultas
 - [ ] Atalho de teclado `Ctrl+Enter` para executar a query
 - [ ] Feedback visual imediato de acerto (animação de sucesso) e erro (mensagem amigável, sem penalidade dura)
 
