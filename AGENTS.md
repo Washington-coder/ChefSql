@@ -237,6 +237,7 @@ O código só é considerado pronto quando:
 - Toda missão nova tem um teste validando que sua solução de referência é aceita.
 - O código segue a nomenclatura em inglês e a estrutura descrita aqui.
 - `README.md` e `AGENTS.md` estão atualizados se comandos, stack ou estrutura mudaram.
+- Você deve marcar a funcionalidade(s) como done em `TASKS.md`
 
 ## Gotchas
 
