@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('/assets/fonts/PressStart2P-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-pixel: 'Press Start 2P', 'Courier New', monospace;
+  --font-body: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
+
+  --color-bg: #17110e;
+  --color-bg-deep: #0d0907;
+  --color-panel: #241a15;
+  --color-panel-light: #33241c;
+  --color-border: #4a3526;
+  --color-border-dark: #191210;
+  --color-text: #f5e9d5;
+  --color-text-dim: #b8a68f;
+  --color-fire: #ff6b35;
+  --color-fire-dark: #b83a12;
+  --color-gold: #ffc94d;
+  --color-green: #7ec850;
+  --color-red: #e5484d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px dashed var(--color-gold);
+  outline-offset: 3px;
+}
+
+.pixel-button {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding: 0.85rem 1.4rem;
+  border: 3px solid var(--color-border-dark);
+  background: var(--color-panel-light);
+  color: var(--color-text);
+  box-shadow: 0 5px 0 0 var(--color-border-dark);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease;
+}
+
+.pixel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 0 var(--color-border-dark);
+  background: #3e2c20;
+}
+
+.pixel-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 0 var(--color-border-dark);
+}
+
+.pixel-button--primary {
+  background: var(--color-fire);
+  color: #fff7ef;
+}
+
+.pixel-button--primary:hover {
+  background: #ff7f4d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
